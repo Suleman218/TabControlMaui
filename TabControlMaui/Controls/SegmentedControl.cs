@@ -135,7 +135,7 @@ namespace TabControlMaui.Controls
                 if (e.NewItems != null)
                     foreach (var item in e.NewItems)
                     {
-                        if (!innerStackLayout.Children.Any<IView>(prop => prop.BindingContext  == item))
+                        if (!innerStackLayout.Children.Any<IView>(prop => (prop as View).BindingContext  == item))
                         {
                             var element = tabbedView.CreateNewItem(item);
                             innerStackLayout.Children.Add(element);
